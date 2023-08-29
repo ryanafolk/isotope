@@ -8,6 +8,7 @@ library(caret)
 library(cAIC4)
 library(car)
 library(cutpointr)
+library(sjPlot)
 
 library(MuMIn)
 library(ggeffects)
@@ -242,6 +243,14 @@ compoundmodelplot <- plot_model(compoundmodel, type = "pred", terms = c("Family"
 
 
 #######
+# Raw data plots by family
+#######
+
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="N content vs. family",x="", y = "wtN")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+
+#######
 # Investigate element and isotope data by habitat
 #######
 
@@ -290,14 +299,12 @@ summary(soilmodel_wtC)
 soilmodelplot <- plot_model(soilmodel_d15N, type = "re", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
 
 
-
-
 #######
 # Investigate native status, controlling for fixers
 #######
 
 native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
-plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Native status vs. wtN") + labs(y = "wtN", x = "Native status")
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. wtN") + labs(y = "wtN", x = "Native status")
 plot_model(native_wtN, type = "re", terms = c("Habitat"))[[1]] + ggtitle("Habitat vs. wtN effect")
 plot_model(native_wtN, type = "re", terms = c("Fixing"))[[2]] + ggtitle("Fixing status vs. wtN effect")
 summary(native_wtN)
@@ -305,17 +312,64 @@ r2(native_wtN)
 
 native_wtC <- lmer(formula = wtC ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
 summary(native_wtC)
-plot_model(native_wtC, type = "pred", terms = c("Native_status")) + ggtitle("Native status vs. wtC") + labs(y = "wtC", x = "Native status")
+plot_model(native_wtC, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. wtC") + labs(y = "wtC", x = "Native status")
 
 native_d15N <- lmer(formula = d15NpermilvsAIR ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
 summary(native_d15N)
-plot_model(native_d15N, type = "pred", terms = c("Native_status")) + ggtitle("Native status vs. d15N") + labs(y = "d15N", x = "Native status")
+plot_model(native_d15N, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. d15N") + labs(y = "d15N", x = "Native status")
 
 native_d13C <- lmer(formula = d13CpermilvsVPDB ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
 summary(native_d13C)
-plot_model(native_d13C, type = "pred", terms = c("Native_status")) + ggtitle("Native status vs. d13C") + labs(y = "d13C", x = "Native status")
+plot_model(native_d13C, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. d13C") + labs(y = "d13C", x = "Native status")
+
+# Raw data plot
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
 
 
+
+#######
+# Models including phylogenetic relationships
+#######
+
+#devtools::install_github("daijiang/rtrees")
+
+library(rtrees)
+library(ape)
+
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N[!grepl('Poaceae', Nitfix_Isotopes_all_2N$binomial), ]
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Asteraceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Fabaceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]
+
+
+tree = get_tree(sp_list = unique(Nitfix_Isotopes_all_2N.cleaned$binomial), taxon = "plant", scenario = "at_basal_node", show_grafted = TRUE)
+
+plot(tree, no.margin = T)
+
+write.tree(tree, "isotope_tree.tre")
+
+library(phyr)
+
+# options(timeout = 4000000)  # long download of next line
+# install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+library(INLA)
+summary(phy.model.wtN) # "binomial" in this context is species
+phy.model.wtN <- phyr::pglmm(wtN ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+summary(phy.model.wtN) # "binomial" in this context is species
+
+
+phy.model.wtN.nophylogeny <- phyr::pglmm(wtN ~ Fixing + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE)
+# delta AIC for phylogeny inclusion
+phy.model.wtN.nophylogeny$AIC - phy.model.wtN$AIC
+
+
+# Bayesian version in next line to get the nice random effect plots
+phy.model.wtN.bayes <- phyr::pglmm(wtN ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree), bayes = TRUE)
+library(ggridges)
+plot_bayes(phy.model.wtN.bayes, sort = TRUE)
+
+library(rr2)
+R2(phy.model.wtN)
+# Use R2_lik in the output
 
 #######
 # COMPARE TO ABOVE

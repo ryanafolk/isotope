@@ -1,34 +1,329 @@
-median(5,6,7)
-median
-median(c(5,6,7))
-median(c(5,6))
-median(c(5.5,7))
-library(dplyr)#
-library(readr)
-library(lme4)#
-library(lmerTest)
-library(performance)#
-library(InformationValue)
-install.packages("InformationValue")
-install.packages("InformationValue")
-remotes::install_github("cran/InformationValue.s3")
-remotes::install_github("cran/InformationValue.s3")
-remotes::install_github("cran/informationvalue.s3")
-library(devtools)
-devtools::install_version("InformationValue", "1.2.3")
-library(InformationValue)#
-library(caret)#
-library(cAIC4)#
-library(car)
-install.packages("caret")
-library(InformationValue)#
-library(caret)#
-library(cAIC4)#
-library(car)
-library(cAIC4)#
-library(car)
-install.packages("cAIC4")
-library(cAIC4)#
-library(car)
-library(caret)
+wtNmodel <- lm(wtN ~ Family, data=Nitfix_Isotopes_all_2N)
+wtCmodel <- lm(wtC ~ Family, data=Nitfix_Isotopes_all_2N)
+compoundmodel <- lm(d15NpermilvsAIR*d13CpermilvsVPDB*wtN*wtC ~ Family, data=Nitfix_Isotopes_all_2N)
+ggplotplot(model)
+ggplotplot(compoundmodel)
 library(ggplot2)
+ggplotplot(compoundmodel)
+ggplot(compoundmodel)
+ggplot(Nmodel)
+ggplot(Nmodel)
+summary(Nmodel)
+Nplot <- plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")
+library(ggeffects)
+Nplot <- plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")
+library(sjPlot)
+Nplot <- plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")
+Cplot <- plot_model(Cmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")#
+#
+wtNplot <- plot_model(wtNmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")#
+#
+wtCplot <- plot_model(wtCmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")
+compoundmodelplot <- plot_model(compoundmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family")
+compoundmodelplot
+compoundmodelplot <- plot_model(compoundmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+compoundmodelplot
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+Nitfix_Isotopes_all_2N <- read_csv("./Nitfix_Isotopes_all_2N_fixed.csv")
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+Nmodel <- lm(d15NpermilvsAIR ~ Family, data=Nitfix_Isotopes_all_2N)#
+#
+Cmodel <- lm(d13CpermilvsVPDB ~ Family, data=Nitfix_Isotopes_all_2N)#
+#
+wtNmodel <- lm(wtN ~ Family, data=Nitfix_Isotopes_all_2N)#
+#
+wtCmodel <- lm(wtC ~ Family, data=Nitfix_Isotopes_all_2N)#
+#
+compoundmodel <- lm(d15NpermilvsAIR*d13CpermilvsVPDB*wtN*wtC ~ Family, data=Nitfix_Isotopes_all_2N)
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+wtNmodel <- lm(wtN ~ Family, data=Nitfix_Isotopes_all_2N)
+plot_model(wtNmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ^1^5N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+Nplot <- plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote('δ'~(^2))~'N', x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote(~(δ^2))~'N', x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote(~(δ^2N)), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote('δ'~^2N), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote('δ'~(^2N)), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote(δ^2N), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote(δ^2N), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote("δ^2N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote("δ"~^2"N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = bquote("δ"^2"N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = expression("δ"^2"N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = expression("δ^2N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = expression("δ[^2]N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = expression("δ[^2]N"), x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=0))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 0, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Cmodel, type = "pred", terms = c("Family")) + ggtitle("δ13C vs. family") + labs(y = "δ13C", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(wtNmodel, type = "pred", terms = c("Family")) + ggtitle("N content vs. family") + labs(y = "wtN", x = "Family") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot_model(compoundmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("N") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_grid(Nplot, Cplot, wtNplot, wtCplot)
+grid_arrange(Nplot, Cplot, wtNplot, wtCplot)
+grid.arrange(Nplot, Cplot, wtNplot, wtCplot)
+library(grid)
+grid_arrange(Nplot, Cplot, wtNplot, wtCplot)
+grid.arrange(Nplot, Cplot, wtNplot, wtCplot)
+library(gridExtra)
+grid.arrange(Nplot, Cplot, wtNplot, wtCplot)
+Nitfix_Isotopes_all_2N$Habitat2<- as.factor(Nitfix_Isotopes_all_2N$Habitat)
+Habitatmodel <- lmer(d15NpermilvsAIR ~ Genus+ (1|Habitat), data=Nitfix_Isotopes_all_2N)
+summary(Habitatmodel)
+plot_model(Habitatmodel, type = "pred", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
+plot_model(Habitatmodel, type = "pred", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+head(Nitfix_Isotopes_all_2N)
+Habitatmodel <- lmer(wtN ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+plot_model(Habitatmodel, type = "pred", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel, type = "pred", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. genus,\nhabitat as a random effect") + labs(y = "N", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel, type = "pred", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. genus,\nhabitat as a random effect") + labs(y = "wtN", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("δ15N vs. family") + labs(y = "N", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. habitat,\ngenus as a fixed effect") + labs(y = "Effect", x = "Habitat")
+r2_nakagawa(Habitatmodel)
+lmer(d15NpermilvsAIR ~ Native_Status + Habit + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+lmer(d15NpermilvsAIR ~ Native_status + Habit + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+head(Nitfix_Isotopes_all_2N)
+lm(d15NpermilvsAIR ~ Genus + Soil.N_1 + Soil.C_1, data=Nitfix_Isotopes_all_2)
+lm(d15NpermilvsAIR ~ Genus + Soil.N_1 + Soil.C_1, data=Nitfix_Isotopes_all_2N)
+lm(d15NpermilvsAIR ~ Genus + Soil%N_1 + Soil%C_1, data=Nitfix_Isotopes_all_2N)
+lm(d15NpermilvsAIR ~ Genus + 'Soil%N_1' + 'Soil%C_1', data=Nitfix_Isotopes_all_2N)
+lm(d15NpermilvsAIR ~ Genus + Soil\%N_1 + Soil\%C_1, data=Nitfix_Isotopes_all_2N)
+Nitfix_Isotopes_all_2N <- read_csv("./Nitfix_Isotopes_all_2N_fixed.csv")
+lm(d15NpermilvsAIR ~ Genus + Soil_pct_N_1 + Soil_pct_C_1, data=Nitfix_Isotopes_all_2N)
+soilmodel <- lm(d15NpermilvsAIR ~ Genus + Soil_pct_N_1 + Soil_pct_C_1, data=Nitfix_Isotopes_all_2N)#
+#
+summary(soilmodel)
+plot_model(soilmodel, type = "re", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
+lmer(d15NpermilvsAIR ~ Soil_pct_N_1 + Soil_pct_C_1 + (1 | Genus), data=Nitfix_Isotopes_all_2N)
+plot_model(soilmodel, type = "re", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
+soilmodel <- lmer(d15NpermilvsAIR ~ Soil_pct_N_1 + Soil_pct_C_1 + (1 | Genus), data=Nitfix_Isotopes_all_2N)
+plot_model(soilmodel, type = "re", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
+summary(soilmodel)
+soilmodel <- lmer(d15NpermilvsAIR ~ as.numeric(Soil_pct_N_1) + as.numeric(Soil_pct_C_1) + (1 | Genus), data=Nitfix_Isotopes_all_2N)#
+#
+summary(soilmodel)
+lmer(d15NpermilvsAIR ~ as.numeric(Soil_pct_N_1) + as.numeric(Soil_pct_N_2) + as.numeric(Soil_pct_C_1) + as.numeric(Soil_pct_C_2) + (1 | Genus), data=Nitfix_Isotopes_all_2N)
+soilmodel <- lmer(d15NpermilvsAIR ~ as.numeric(Soil_pct_N_1) + as.numeric(Soil_pct_N_2) + as.numeric(Soil_pct_C_1) + as.numeric(Soil_pct_C_2) + (1 | Genus), data=Nitfix_Isotopes_all_2N)#
+#
+summary(soilmodel)
+soilmodel <- lmer(d15NpermilvsAIR ~ (as.numeric(Soil_pct_N_1) + as.numeric(Soil_pct_N_2))/2 + (as.numeric(Soil_pct_C_1) + as.numeric(Soil_pct_C_2))/2 + (1 | Genus), data=Nitfix_Isotopes_all_2N)#
+#
+summary(soilmodel)
+soilmodel <- lmer(d15NpermilvsAIR ~ as.numeric(as.numeric(Soil_pct_N_1) + as.numeric(Soil_pct_N_2))/2 + as.numeric(as.numeric(Soil_pct_C_1) + as.numeric(Soil_pct_C_2))/2 + (1 | Genus), data=Nitfix_Isotopes_all_2N)#
+#
+summary(soilmodel)
+Nitfix_Isotopes_all_2N$Soil_pct_N <- mean(c(as.numeric(Soil_pct_N_1), as.numeric(Soil_pct_N_2))
+)
+Nitfix_Isotopes_all_2N$Soil_pct_N <- (as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_N_1 + as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_N_2))/2
+)
+Nitfix_Isotopes_all_2N$Soil_pct_N <- (as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_N_1) + as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_N_2))/2
+Nitfix_Isotopes_all_2N$Soil_pct_C <- (as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_C_1) + as.numeric(Nitfix_Isotopes_all_2N$Soil_pct_C_2))/2
+soilmodel <- lmer(d15NpermilvsAIR ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data=Nitfix_Isotopes_all_2N)
+summary(soilmodel)
+plot_model(soilmodel, type = "re", terms = c("Genus")) + ggtitle("N") + labs(y = "N", x = "Genus")
+head(Nitfix_Isotopes_all_2N)
+soilmodel_d13C <- lmer(d13CpermilvsVPDB ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_d15N)
+soilmodel_d15N <- lmer(d15NpermilvsAIR ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_d15N)
+soilmodel_d13C <- lmer(d13CpermilvsVPDB ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_d13C)
+soilmodel_wtN <- lmer(wtN ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_wtN)
+soilmodel_wtC <- lmer(wtC ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_wtC)
+r2_nakagawa(Habitatmodel)
+model_step <- stepcAIC(Habitatmodel, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
+Habitatmodel_d13C <- lmer(d13CpermilvsVPDB ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_wtN)
+Habitatmodel_d15N <- lmer(d15NpermilvsAIR ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_d15N)
+model_step <- stepcAIC(Habitatmodel_d15N, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_d13C, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_wtN, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_wtC, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
+Habitatmodel_d15N <- lmer(d15NpermilvsAIR ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_d15N)#
+Habitatmodel_d13C <- lmer(d13CpermilvsVPDB ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_d13C)#
+Habitatmodel_wtN <- lmer(wtN ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_wtN)#
+Habitatmodel_wtC <- lmer(wtC ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)#
+summary(Habitatmodel_wtC)
+model_step <- stepcAIC(Habitatmodel_d15N, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_d13C, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_wtN, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)#
+model_step <- stepcAIC(Habitatmodel_wtC, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
+r2_nakagawa(Habitatmodel_wtN)
+soilmodel_d15N <- lmer(d15NpermilvsAIR ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_d15N)#
+soilmodel_d13C <- lmer(d13CpermilvsVPDB ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_d13C)#
+soilmodel_wtN <- lmer(wtN ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_wtN)#
+soilmodel_wtC <- lmer(wtC ~ Soil_pct_N + Soil_pct_C + (1 | Genus), data = Nitfix_Isotopes_all_2N)#
+summary(soilmodel_wtC)
+plot_model(initial_model, type = "pred", terms = c("Habitat")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(initial_model, type = "re", terms = c("Habitat")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(initial_model, type = "re", terms = c("Habitat")) + ggtitle("N-fixing vs. habitat") + labs(y = "N-fixing effect", x = "Habitat")
+plot_model(initial_model, type = "pred", terms = c("Habitat")) + ggtitle("N-fixing vs. habitat") + labs(y = "N-fixing effect", x = "Habitat")
+plot_model(initial_model, type = "pred", terms = c("sc_wtN")) + ggtitle("N-fixing vs. habitat") + labs(y = "N-fixing effect", x = "Habitat")
+plot_model(initial_model, type = "pred", terms = c("wtN")) + ggtitle("N-fixing vs. wtN") + labs(y = "N-fixing effect", x = "Habitat")
+plot_model(initial_model, type = "pred", terms = c("sc_wtN")) + ggtitle("N-fixing vs. N content") + labs(y = "Proportion N-fixing", x = "wtN")
+plot_model(initial_model, type = "pred", terms = c("sc_wtN")) + ggtitle("N-fixing vs. N content") + labs(y = "Proportion N-fixing", x = "wtN (standardized)")
+plot_model(initial_model, type = "pred", terms = c("sc_wtC")) + ggtitle("N-fixing vs. N content") + labs(y = "Proportion N-fixing", x = "wtC (standardized)")
+plot_model(initial_model, type = "pred", terms = c("sc_d15NpermilvsAIR")) + ggtitle("N-fixing vs. δ15N") + labs(y = "Proportion N-fixing", x = "δ15N")
+plot_model(initial_model, type = "pred", terms = c("sc_d13CpermilvsVPDB")) + ggtitle("N-fixing vs. δ13C") + labs(y = "Proportion N-fixing", x = "δ13C")
+plot_model(initial_model, type = "re", terms = c("Habitat")) + ggtitle("N-fixing vs. habitat") + labs(y = "N-fixing effect", x = "Habitat")
+native <- lm(formula = wtN ~ Native_status, data = nitfix)
+native <- lm(formula = wtN ~ Native_status, data = Nitfix_Isotopes_all_2N)
+r2(native)
+boxplot(native)
+boxplot(native)
+plot(native)
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+native <- lm(formula = wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a"])#
+#
+r2(native)#
+#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+native <- lm(formula = wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != NA])#
+#
+r2(native)#
+#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+Nitfix_Isotopes_all_2N$Native_status
+native <- lm(formula = wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a"])
+Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a"]
+Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]
+native <- lm(formula = wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+#
+r2(native)#
+#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+native <- lmer(formula = wtN ~ Native_status + (1 | Habitat), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+r2(native)#
+#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+native <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+#
+r2(native)#
+#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+r2(native_wtN)
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")#
+r2(native_wtN)
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+Nitfix_Isotopes_all_2N <- read_csv("./Nitfix_Isotopes_all_2N_fixed.csv")
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]$Fixing
+Nitfix_Isotopes_all_2N$Fixing
+Nitfix_Isotopes_all_2N <- read_csv("./Nitfix_Isotopes_all_2N_fixed.csv")
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "re", terms = c("Habitat")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "re", terms = c("Fixing")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "re", terms = c("Fixing")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "re", terms = c("Fixing")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "re", terms = c("Fixing")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native_wtN, type = "re", terms = c("Fixing")) + ggtitle("Habitat") + labs(y = "Effect on wtN", x = "status")
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+plot_model(native_wtN, type = "re", terms = c("Habitat")) + ggtitle("Habitat") + labs(y = "Effect on wtN", x = "status")
+plot_model(native_wtN, type = "re", terms = c("Habitat")) + ggtitle("Habitat") + labs(y = "Effect on wtN", x = "status")
+plot_model(native_wtN, type = "pred", terms = c("Native_status"))
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "status")
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+plot_model(native_wtN, type = "re", terms = c("Habitat")) + ggtitle("Habitat") + labs(y = "Effect on wtN", x = "status")
+plot_model(native_wtN, type = "re", terms = c("Habitat"))
+plot_model(native_wtN, type = "re", terms = c("Fixing"))
+plot_model(native_wtN, type = "pred", terms = c("Native_status"))[[1]]
+plot_model(native_wtN, type = "pred", terms = c("Native_status"))[[2]]
+plot_model(native_wtN, type = "re", terms = c("Habitat"))[[1]]
+plot_model(native_wtN, type = "re", terms = c("Habitat"))[[1]] + ggtitle("Habitat vs. wtN effect")
+plot_model(native_wtN, type = "re", terms = c("Fixing"))[[2]] + ggtitle("Habitat vs. wtN effect")
+native_wtC <- lmer(formula = wtC ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+plot_model(native_wtC, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtC", x = "status")
+native_d15N <- lmer(formula = d15NpermilvsAIR ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "d15N", x = "status")
+native_d13C <- lmer(formula = d13CpermilvsVPDB ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])#
+plot_model(native, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "d13C", x = "status")
+summary(native_wtN)
+summary(native_wtC)
+summary(native_d15N)
+summary(native_d13C)
+native_d13C <- lmer(formula = d13CpermilvsVPDB ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+summary(native_d13C)
+plot_model(native_d13C, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "d13C", x = "status")
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Status") + labs(y = "wtN", x = "Native status")
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Native status vs. wtN") + labs(y = "wtN", x = "Native status")
+plot_model(native_wtN, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. wtN") + labs(y = "wtN", x = "Native status")
+plot_model(native_wtC, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. wtC") + labs(y = "wtC", x = "Native status")
+plot_model(native_d15N, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. d15N") + labs(y = "d15N", x = "Native status")
+plot_model(native_d13C, type = "pred", terms = c("Native_status")) + ggtitle("Native status\nvs. d13C") + labs(y = "d13C", x = "Native status")
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = wtC)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = d15NpermilvsAIR)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = d13CpermilvsVPDB)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+lm(wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+summary(lm(wtN ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]))
+summary(lm(wtC ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]))
+summary(lm(d13CpermilvsVPDB ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]))
+summary(lm(d15NpermilvsAIR ~ Native_status, data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ]))
+summary(native_wtN)
+native_wtN <- lmer(formula = wtN ~ Native_status + (1 | Habitat) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ])
+summary(native_wtN)
+r2(native_wtN)
+summary(native_wtC)
+summary(native_d15N)
+summary(native_d13C)
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Native_status, y = native_d13C)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+summary(native_wtN)
+Nplot <- plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Nmodel, type = "pred", terms = c("Family")) + ggtitle("δ15N vs. family") + labs(y = "δ15N", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(wtNmodel, type = "pred", terms = c("Family")) + ggtitle("N content vs. family") + labs(y = "wtN", x = "Family") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Family, y = d15NpermilvsAIR)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], aes(x = Family, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_violin(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_box(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic()
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="Plot of length  by dose",x="Dose (mg)", y = "Length")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="N content vs. family",x="", y = "wtN")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="N content vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d13CpermilvsVPDB)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtC)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+head(Nitfix_Isotopes_all_2N)
+Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$binomial == "Cercis canadensis", ]
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+devtools::install_github("daijiang/rtrees")
+library(rtrees)#
+library(ape)
+unique(Nitfix_Isotopes_all_2N$binomial)
+tree = get_tree(sp_list = unique(Nitfix_Isotopes_all_2N$binomial), taxon = "plant", scenario = "at_basal_node", show_grafted = TRUE)
+Nitfix_Isotopes_all_2N <- read_csv("./Nitfix_Isotopes_all_2N_fixed.csv")
+# Scale the variables#
+Nitfix_Isotopes_all_2N$sc_d13CpermilvsVPDB <- scale(Nitfix_Isotopes_all_2N$d13CpermilvsVPDB)#
+Nitfix_Isotopes_all_2N$sc_d15NpermilvsAIR <- scale(Nitfix_Isotopes_all_2N$d15NpermilvsAIR)#
+Nitfix_Isotopes_all_2N$sc_wtN <- scale(Nitfix_Isotopes_all_2N$wtN)#
+Nitfix_Isotopes_all_2N$sc_wtC <- scale(Nitfix_Isotopes_all_2N$wtC)
+tree = get_tree(sp_list = unique(Nitfix_Isotopes_all_2N$binomial), taxon = "plant", scenario = "at_basal_node", show_grafted = TRUE)
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N[!grepl('Poaceae', Nitfix_Isotopes_all_2N$column), ]
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N[!grepl('Poaceae', Nitfix_Isotopes_all_2N$binomial), ]
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N[!grepl('Poaceae', Nitfix_Isotopes_all_2N$binomial), ]#
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Asteraceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]#
+Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Fabaceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]
+tree = get_tree(sp_list = unique(Nitfix_Isotopes_all_2N.cleaned$binomial), taxon = "plant", scenario = "at_basal_node", show_grafted = TRUE)
+.rs.restartR()
+library(rtrees)
+tree = get_tree(sp_list = unique(Nitfix_Isotopes_all_2N.cleaned$binomial), taxon = "plant", scenario = "at_basal_node", show_grafted = TRUE)
