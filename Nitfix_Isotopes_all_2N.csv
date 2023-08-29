@@ -4,12 +4,12 @@ JRD495,2328,10830,-0.22,-35.01,2.33,42.6,1,Fabales,Fabaceae,Desmodieae,Lespedeza
 JRD496,2368,12181,-0.95,-32.82,2.2,43.88,1,Fabales,Fabaceae,Phaseoleae,Amphicarpaea bracteata,Amphicarpaea,bracteata,E,Chocoloco WMA,0.46,0.24,6.21,4.64,Calhoun,Doby,CC forest,Closed canopy forest edge,Alabama
 JRD497,3440,12749,-0.41,-32.38,3.14,45.66,1,Fabales,Fabaceae,Phaseoleae,Amphicarpaea bracteata,Amphicarpaea,bracteata,E,Chocoloco WMA,0.46,0.24,6.21,4.64,Calhoun,Doby,CC forest,Closed canopy forest edge,Alabama
 GUR-MIS,7196,11074,-0.01,-31.07,3.04,45.12,1,Fabales,Fabaceae,Mimoseae,Mimosa pudica,Mimosa,pudica,E,Gainesville,n/a,n/a,n/a,n/a,Alachua,Guralnick,Disturbed,Disturbed,Florida
-JRD-321,3737,9980,-1.24,-33.31,1.62,43.22,1,Fabales,Fabaceae,Desmodieae,Desmodium  incanum,Desmodium, incanum,E,Prairie Creek Preserve,n/a,n/a,n/a,n/a,Alachua,Doby,Disturbed,Flooded ditch,Florida
-JRD-322,3784,10455,-1.24,-31.82,1.53,42.83,1,Fabales,Fabaceae,Desmodieae,Desmodium  triflorum,Desmodium,triflorum,E,Prairie Creek Preserve,n/a,n/a,n/a,n/a,Alachua,Doby,Disturbed,Flooded ditch,Florida
-JRD-330,8319,9917,-1.07,-31.9,3.61,41.73,1,Fabales,Fabaceae,Ingeae,Arachis  hypogaea,Arachis,hypogaea,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
-JRD-331,8313,10972,-1.86,-33.86,3.42,45.51,1,Fabales,Fabaceae,Desmodieae,Desmodium  incanum,Desmodium,incanum,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
-JRD-333,11249,10843,-1.21,-32.85,4.48,42.41,1,Fabales,Fabaceae,Crotalarieae,Crotalaria  lanceolata,Crotalaria, lanceolata,E,NATL site 2,0.07,0.09,1.34,1.65,Alachua,Doby,Disturbed,Disturbed,Florida
-JRD-334,13033,10369,0.1,-30.67,5.05,40.16,1,Fabales,Fabaceae,Indigofereae,Indigofera  spicata,Indigofera,spicata,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
+JRD-321,3737,9980,-1.24,-33.31,1.62,43.22,1,Fabales,Fabaceae,Desmodieae,Desmodium incanum,Desmodium, incanum,E,Prairie Creek Preserve,n/a,n/a,n/a,n/a,Alachua,Doby,Disturbed,Flooded ditch,Florida
+JRD-322,3784,10455,-1.24,-31.82,1.53,42.83,1,Fabales,Fabaceae,Desmodieae,Desmodium triflorum,Desmodium,triflorum,E,Prairie Creek Preserve,n/a,n/a,n/a,n/a,Alachua,Doby,Disturbed,Flooded ditch,Florida
+JRD-330,8319,9917,-1.07,-31.9,3.61,41.73,1,Fabales,Fabaceae,Ingeae,Arachis hypogaea,Arachis,hypogaea,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
+JRD-331,8313,10972,-1.86,-33.86,3.42,45.51,1,Fabales,Fabaceae,Desmodieae,Desmodium incanum,Desmodium,incanum,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
+JRD-333,11249,10843,-1.21,-32.85,4.48,42.41,1,Fabales,Fabaceae,Crotalarieae,Crotalaria lanceolata,Crotalaria, lanceolata,E,NATL site 2,0.07,0.09,1.34,1.65,Alachua,Doby,Disturbed,Disturbed,Florida
+JRD-334,13033,10369,0.1,-30.67,5.05,40.16,1,Fabales,Fabaceae,Indigofereae,Indigofera spicata,Indigofera,spicata,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
 JRD-335,13246,10803,-1.46,-34.45,5.51,43.69,1,Fabales,Fabaceae,Crotalarieae,Crotalaria pallida,Crotalaria,pallida,E,NATL site 2,0.07,0.09,1.34,1.65,Alachua,Doby,Disturbed,Disturbed,Florida
 JRD-336,8556,11055,-1.53,-31.58,3.39,41.91,1,Fabales,Fabaceae,Trifolieae,Trifolium repens,Trifolium,repens,E,NATL site 1,0.18,0.45,5.54,14.21,Alachua,Doby,Disturbed,Disturbed,Florida
 JRD-337,8431,11155,-0.54,-33.53,3.54,45.95,1,Rosales,Elaeagnaceae,n/a,Elaeagnus pungens,Elaeagnus,pungens,E,Lake Alice,n/a,n/a,n/a,n/a,Alachua,Doby,Disturbed,Flooded forest,Florida
@@ -222,7 +222,7 @@ JRD627,1804,10154,-1.39,-32.52,1.97,46.64,0,Fagales,Fagaceae,n/a,Quercus nigra,Q
 JRD628,1366,10066,0.63,-33.05,1.55,47.33,0,Fagales,Fagaceae,n/a,Quercus,Quercus,NA,na,Crystal River,0.21,0.25,4.73,5.01,Citrus,Doby,Disturbed,Disturbed Junk Hammock Edge,Florida
 JRD-314,3216,9080,-1.23,-32.19,1.39,38.68,0,Fabales,Polygaceae,n/a,Polygala lutea,Polygala,lutea,na,Austin Cary Forest,n/a,n/a,n/a,n/a,Alachua,Doby,Flatwoods,Flatwoods,Florida
 JRD-318,2568,11402,-1.45,-32.62,1.04,45.49,0,Rosales,Rosaceae,n/a,Rubus cuneifolius,Rubus,cuneifolius,na,Austin Cary Forest,n/a,n/a,n/a,n/a,Alachua,Doby,Flatwoods,Flatwoods,Florida
-JRD-319,3501,11884,2.69,-31.03,1.45,47.09,0,Asterales,Asteraceae,n/a,Pseudognaphalium  obtusifolium,Pseudognaphalium,,na,Austin Cary Forest,n/a,n/a,n/a,n/a,Alachua,Doby,Flatwoods,Flatwoods,Florida
+JRD-319,3501,11884,2.69,-31.03,1.45,47.09,0,Asterales,Asteraceae,n/a,Pseudognaphalium obtusifolium,Pseudognaphalium,,na,Austin Cary Forest,n/a,n/a,n/a,n/a,Alachua,Doby,Flatwoods,Flatwoods,Florida
 JRD-320,1567,10748,-0.68,-32.35,0.65,41.5,0,Asterales,Asteraceae,n/a,Pityopsis graminifolia,Pityopsis,graminifolia,na,Austin Cary Forest,n/a,n/a,n/a,n/a,Alachua,Doby,Flatwoods,Flatwoods,Florida
 JRD411,680,3712,11.88,-31.39,0.81,48.68,0,Pinales,Pinaceae,n/a,Pinus elliotii,Pinus,elliotii,na,Austin Cary,0.12,0.1,3.26,3.13,Alachua,Doby,Flatwoods,Flatwoods,Florida
 JRD412,1252,4763,7.87,-29.89,1.16,46.7,0,Fagales,Fagaceae,n/a,Quercus,Quercus,NA,na,Austin Cary,0.12,0.1,3.26,3.13,Alachua,Doby,Flatwoods,Flatwoods,Florida
