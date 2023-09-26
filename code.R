@@ -257,13 +257,13 @@ ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_box
 Nitfix_Isotopes_all_2N$Habitat2<- as.factor(Nitfix_Isotopes_all_2N$Habitat)
 library(performance)
 
-Habitatmodel_d15N <- lmer(d15NpermilvsAIR ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+Habitatmodel_d15N <- lmer(d15NpermilvsAIR ~ Habitat + (1|Genus), data=Nitfix_Isotopes_all_2N)
 summary(Habitatmodel_d15N)
-Habitatmodel_d13C <- lmer(d13CpermilvsVPDB ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+Habitatmodel_d13C <- lmer(d13CpermilvsVPDB ~ Habitat + (1|Genus), data=Nitfix_Isotopes_all_2N)
 summary(Habitatmodel_d13C)
-Habitatmodel_wtN <- lmer(wtN ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+Habitatmodel_wtN <- lmer(wtN ~ Habitat + (1|Genus), data=Nitfix_Isotopes_all_2N)
 summary(Habitatmodel_wtN)
-Habitatmodel_wtC <- lmer(wtC ~ Genus + (1|Habitat), data=Nitfix_Isotopes_all_2N)
+Habitatmodel_wtC <- lmer(wtC ~ Habitat + (1|Genus), data=Nitfix_Isotopes_all_2N)
 summary(Habitatmodel_wtC)
 
 model_step <- stepcAIC(Habitatmodel_d15N, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
@@ -271,7 +271,10 @@ model_step <- stepcAIC(Habitatmodel_d13C, direction  = "backward", trace = TRUE,
 model_step <- stepcAIC(Habitatmodel_wtN, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
 model_step <- stepcAIC(Habitatmodel_wtC, direction  = "backward", trace = TRUE, data = Nitfix_Isotopes_all_2N)
 
+r2_nakagawa(Habitatmodel_d15N)
+r2_nakagawa(Habitatmodel_d13C)
 r2_nakagawa(Habitatmodel_wtN)
+r2_nakagawa(Habitatmodel_wtC)
 
 
 Habitatmodelplot <- plot_model(Habitatmodel_wtN, type = "pred", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. genus,\nhabitat as a random effect") + labs(y = "wtN", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
@@ -328,7 +331,7 @@ ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], 
 
 
 #######
-# Models including phylogenetic relationships
+# Element and isotope models including phylogenetic relationships
 #######
 
 #devtools::install_github("daijiang/rtrees")
@@ -336,6 +339,7 @@ ggplot(Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], 
 library(rtrees)
 library(ape)
 
+# Remove taxa not determined at least to genus
 Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N[!grepl('Poaceae', Nitfix_Isotopes_all_2N$binomial), ]
 Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Asteraceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]
 Nitfix_Isotopes_all_2N.cleaned <- Nitfix_Isotopes_all_2N.cleaned[!grepl('Fabaceae', Nitfix_Isotopes_all_2N.cleaned$binomial), ]
@@ -356,11 +360,9 @@ summary(phy.model.wtN) # "binomial" in this context is species
 phy.model.wtN <- phyr::pglmm(wtN ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
 summary(phy.model.wtN) # "binomial" in this context is species
 
-
 phy.model.wtN.nophylogeny <- phyr::pglmm(wtN ~ Fixing + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE)
 # delta AIC for phylogeny inclusion
 phy.model.wtN.nophylogeny$AIC - phy.model.wtN$AIC
-
 
 # Bayesian version in next line to get the nice random effect plots
 phy.model.wtN.bayes <- phyr::pglmm(wtN ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree), bayes = TRUE)
@@ -371,95 +373,43 @@ library(rr2)
 R2(phy.model.wtN)
 # Use R2_lik in the output
 
-#######
-# COMPARE TO ABOVE
-#######
 
+phy.model.wtC <- phyr::pglmm(wtC ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+phy.model.wtC.nophylogeny <- phyr::pglmm(wtC ~ Fixing + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE)
+phy.model.wtC.nophylogeny$AIC - phy.model.wtC$AIC
+summary(phy.model.wtC)
 
-Nitfix_Isotopes_all_disturbed <- read.csv("C:/Users/joshu/Documents/Projects/Nitfix Isotopes/Nitfix_Isotopes_all_disturbed.csv")
+phy.model.d15N <- phyr::pglmm(sc_d15NpermilvsAIR ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+phy.model.d15N.nophylogeny <- phyr::pglmm(sc_d15NpermilvsAIR ~ Fixing + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE)
+phy.model.d15N.nophylogeny$AIC - phy.model.d15N$AIC
+summary(phy.model.d15N)
 
-wantedcolumns <- Nitfix_Isotopes_all_2 %>% dplyr::select(Soil.N_1, Soil.C_1, Locality, Habitat)
-
-Nitfix_Isotopes_all_4 <- wantedcolumns %>% dplyr::distinct(Soil.N_1, Soil.C_1, Locality, Habitat, keep_all = T)
-
-boxplot <- boxplot(as.numeric(Soil.N_1)~Habitat,data= Nitfix_Isotopes_all_4, main="Soil N by Habitat", xlab="Habitat", ylab="Soil N")
-
-boxplot2 <- boxplot(as.numeric(Soil.C_1)~Habitat,data= Nitfix_Isotopes_all_4, main="Soil C by Habitat", xlab="Habitat", ylab="Soil C")
-
-exotic <- lm(Soil.N_1 ~ Habitat, data=Nitfix_Isotopes_all_2)
-
-summary(exotic)
-
-vif(exotic)
-
-library(car)
-
-exotic2 <- lm(wtN ~ Native_status, data=Nitfix_Isotopes_all_disturbed)
-
-summary(exotic2)
-
-r2(exotic)
-
-library(tidyverse)
-
-nitfix <- Nitfix_Isotopes_all_2 %>% drop_na()
-interactionmodel <- lm(d15NpermilvsAIR ~ Habitat*Native_status, data=nitfix)
-
-noninteractionmodel <- lm(d15NpermilvsAIR ~ Habitat+Native_status, data=nitfix)
-
-anovaint <- anova(interactionmodel,noninteractionmodel)
-
-AIC(interactionmodel)
-
-AIC(noninteractionmodel)
-
-summary(noninteractionmodel)
-
-wtNinteractionmodel <- lm(wtN ~ Habitat*Native_status, data=nitfix)
-
-wtNnoninteractionmodel <- lm(wtN ~ Habitat+Native_status, data=nitfix)
-
-anova_wtN <- anova(interactionmodel,noninteractionmodel)
-
-AIC(wtNinteractionmodel)
-
-summary(wtNnoninteractionmodel)
-
-AIC(wtNnoninteractionmodel)
-
+phy.model.d13C <- phyr::pglmm(sc_d13CpermilvsVPDB ~ Fixing + (1 | binomial) + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+phy.model.d13C.nophylogeny <- phyr::pglmm(sc_d13CpermilvsVPDB ~ Fixing + (1 | Habitat), data = Nitfix_Isotopes_all_2N, family = "gaussian", REML = FALSE)
+phy.model.d13C.nophylogeny$AIC - phy.model.d13C$AIC
+summary(phy.model.d13C)
 
 #######
-# DEPRECATED, COMPARE TO ABOVE
+# Investigate native status, controlling for fixers AND phylogeny
 #######
 
-#install.packages("ISLR")
-library(ISLR)
+phy.model.native_wtN <- phyr::pglmm(formula = wtN ~ Native_status + (1 | binomial) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+summary(phy.model.native_wtN)
+# Bayesian version in next line to get the nice random effect plots
+phy.model.native_wtN.bayes <- phyr::pglmm(wtN ~ Native_status + (1 | binomial) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree), bayes = TRUE)
+library(ggridges)
+plot_bayes(phy.model.native_wtN.bayes, sort = TRUE)
+library(rr2)
+R2(phy.model.native_wtN)
+# Use R2_lik in the output
 
-#sets a random seed for splitting training and testing
-set.seed(299)
+phy.model.native_wtC <- phyr::pglmm(formula = wtC ~ Native_status + (1 | binomial) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+summary(phy.model.native_wtC)
 
-#this creates a random sample of true and false values equal to number of rows
-#in our nitfix dataframe with the probabilities at .75 for TRUE and .25 for FALSE 
-sample <- sample(c(TRUE, FALSE), nrow(Nitfix_Isotopes_all_2N), replace=TRUE, prob=c(0.75,0.25))
+phy.model.native_d15N <- phyr::pglmm(formula = sc_d15NpermilvsAIR ~ Native_status + (1 | binomial) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+summary(phy.model.native_d15N)
 
-#we use the sample vector to basically split the file into a training dataset
-#the rows matching TRUE go to train, the ones matching FALSE to test
-train <- Nitfix_Isotopes_all_2N[sample, ]
-test <- Nitfix_Isotopes_all_2N[!sample, ]
-
-#we fit the model predicting Fixing yes/no from our isotope and wtN and C values
-#I am using the training dataset to _calibrate_ the model
-#this is a logistic regression since we are predicting a binary outcome
-model <- glmer(Fixing ~ sc_d13CpermilvsVPDB + sc_d15NpermilvsAIR + sc_wtN + sc_wtC + (1|Habitat), family=binomial, data=train)
-
-# This is the first magical part where we predict probability of fixing for our test data
-predicted <- predict(model, test, type="response")
-
-# Thresholding step
-optimal <- optimalCutoff(test$Fixing, predicted)[1]
-
-#this just summarizes everything into a confusion matrix
-confusionMatrix(as.factor(test$Fixing), as.factor(ifelse(predicted > optimal, 1, 0)))
-
+phy.model.native_d13C <- phyr::pglmm(formula = sc_d13CpermilvsVPDB ~ Native_status + (1 | binomial) + (1 | Fixing), data = Nitfix_Isotopes_all_2N[Nitfix_Isotopes_all_2N$Native_status != "n/a", ], family = "gaussian", REML = FALSE, cov_ranef = list(sp = tree))
+summary(phy.model.native_d13C)
 
 
