@@ -89,12 +89,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.1193626"
-     inkscape:cx="371.64006"
-     inkscape:cy="149.63873"
+     inkscape:zoom="0.79150889"
+     inkscape:cx="298.16469"
+     inkscape:cy="154.76769"
      inkscape:window-width="1419"
      inkscape:window-height="645"
-     inkscape:window-x="24"
+     inkscape:window-x="21"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="g13634">
@@ -1597,17 +1597,18 @@
     </g>
     <g
        id="g14416"
-       transform="matrix(1,0,0,-1,0,223.6235)">
+       transform="matrix(1,0,0,-1,0,223.6235)"
+       style="fill:#0000ff">
       <text
          xml:space="preserve"
          transform="rotate(-45,313.92794,-69.143212)"
-         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text14420"><tspan
            x="0 5.8696003 7.8249602 12.719521 17.61408 22.50864 27.403202 32.29776 37.192322 41.592323 46.486881 51.381443"
            y="0"
            sodipodi:role="line"
            id="tspan14418"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'">Elaeagnaceae</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0000ff">Elaeagnaceae</tspan></text>
     </g>
     <g
        id="g14422"
@@ -1624,17 +1625,18 @@
     </g>
     <g
        id="g14428"
-       transform="matrix(1,0,0,-1,0,223.6235)">
+       transform="matrix(1,0,0,-1,0,223.6235)"
+       style="fill:#0000ff">
       <text
          xml:space="preserve"
          transform="rotate(-45,337.52327,-167.46682)"
-         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text14432"><tspan
            x="0 5.3750401 10.269601 15.164161 20.058722 24.458721 29.353281 34.247841"
            y="0"
            sodipodi:role="line"
            id="tspan14430"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'">Fabaceae</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0000ff">Fabaceae</tspan></text>
     </g>
     <g
        id="g14434"
@@ -1651,17 +1653,18 @@
     </g>
     <g
        id="g14440"
-       transform="matrix(1,0,0,-1,0,223.6235)">
+       transform="matrix(1,0,0,-1,0,223.6235)"
+       style="fill:#0000ff">
       <text
          xml:space="preserve"
          transform="rotate(-45,372.61052,-238.04623)"
-         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#4d4d4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="font-variant:normal;font-weight:normal;font-size:8.8px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text14444"><tspan
            x="0 7.3304005 11.730401 14.660801 16.616161 21.016161 25.910721 30.310722 35.20528 40.099842"
            y="0"
            sodipodi:role="line"
            id="tspan14442"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold'">Myricaceae</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#0000ff">Myricaceae</tspan></text>
     </g>
     <g
        id="g14446"
