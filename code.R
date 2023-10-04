@@ -277,8 +277,18 @@ r2_nakagawa(Habitatmodel_wtN)
 r2_nakagawa(Habitatmodel_wtC)
 
 
-Habitatmodelplot <- plot_model(Habitatmodel_wtN, type = "pred", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. genus,\nhabitat as a random effect") + labs(y = "wtN", x = "Genus") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-Habitatmodelplot <- plot_model(Habitatmodel_wtN, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. habitat,\ngenus as a fixed effect") + labs(y = "Effect", x = "Habitat")
+plot_model(Habitatmodel_d15N, type = "pred", terms = c("Habitat")) + ggtitle("N") + ggtitle("d15N vs. habitat\nas a fixed effect") + labs(y = "d15N effect", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel_d15N, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("d15N vs. genus\nas a random effect") + labs(y = "d15N effect", x = "Genus")
+
+plot_model(Habitatmodel_d13C, type = "pred", terms = c("Habitat")) + ggtitle("N") + ggtitle("d13C vs. habitat\nas a fixed effect") + labs(y = "d13C effect", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel_d13C, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("d13C vs. genus\nas a random effect") + labs(y = "d13C effect", x = "Genus")
+
+plot_model(Habitatmodel_wtN, type = "pred", terms = c("Habitat")) + ggtitle("N") + ggtitle("N content vs. habitat\nas a fixed effect") + labs(y = "wtN effect", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel_wtN, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("N content vs. genus\nas a random effect") + labs(y = "wtN effect", x = "Genus")
+
+plot_model(Habitatmodel_wtC, type = "pred", terms = c("Habitat")) + ggtitle("N") + ggtitle("C content vs. habitat\nas a fixed effect") + labs(y = "wtC effect", x = "Habitat") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+plot_model(Habitatmodel_wtC, type = "re", terms = c("Genus")) + ggtitle("N") + ggtitle("C content vs. genus\nas a random effect") + labs(y = "wtC effect", x = "Genus")
+
 
 
 #Marginal R2 provides the variance explained only by fixed effects and conditional R2 provides the variance explained by the entire model, i.e., both fixed effects and random effects.
