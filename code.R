@@ -246,8 +246,10 @@ compoundmodelplot <- plot_model(compoundmodel, type = "pred", terms = c("Family"
 # Raw data plots by family
 #######
 
-ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="N content vs. family",x="", y = "wtN")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
-ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="d15N vs. family",x="", y = "d15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d15NpermilvsAIR)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="δ15N vs. family",x="", y = "δ15N")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = d13CpermilvsVPDB)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="δ13C vs. family",x="", y = "δ13C")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtN)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="N content vs. family",x="", y = "wtN (g)")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+ggplot(Nitfix_Isotopes_all_2N, aes(x = Family, y = wtC)) +  geom_boxplot(trim=FALSE, fill="gray") + labs(title="C content vs. family",x="", y = "wtC (g)")+  geom_boxplot(width=0.1) + theme_classic() + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 
 
 #######
